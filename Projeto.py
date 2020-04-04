@@ -21,24 +21,23 @@ def sorteio():
 def pass_line_bet():
     global aposta1
     global soma1
-    global fichas
-    
+    global fichas   
     print('A soma do resultado dos dados é',soma1)        
     if soma1==7 or soma1==11:
         fichas = fichas + aposta1
         print('Você ganhou.')
-        print('Agora você tem',fichas)  
+        print('Agora você tem {0} fichas'.format(fichas))) ) 
     elif 2<=soma1<=3 or soma1==12:
         fichas = fichas - aposta1
         print('Você perdeu.')
-        print('Agora você tem',fichas)
+        print('Agora você tem {0} fichas'.format(fichas))) 
     else:
         def loop_point():
             soma2=sorteio()
             global fichas                   
             print('O seu valor point é o {0}'.format(soma1))
             print('O novo valor sorteado é',soma2)
-            print('Agora você tem',fichas) 
+            print('Você possui {0} fichas agora'.format(fichas))
             if(soma2==soma1):
                 fichas=fichas+aposta1
                 print('Você sorteu o seu valor point')
@@ -51,19 +50,21 @@ def pass_line_bet():
                 return False
         while(loop_point()!=True):
             loop_point()
-  
-
-def apostas():
-    while True:
-        global soma1
-        soma1=sorteio()
-        pergunta2 = input('Você deseja apostar em Pass Line Bet? (sim/não):')
-        if pergunta2 == 'sim':
-            aposta1 = int(input('quanto vc deseja apostar?'))
-            pass_line_bet()
-
-if (apostar()==True):
-    while(fichas>0):
-        apostas()
-else:
-    print("Obrigado por jogar") 
+def field():
+    global aposta2
+    global soma1
+    global fichas
+    print('A soma do resultado dos dados é',soma1)
+    if 5<=soma1<=8:
+        fichas = fichas - aposta2
+        print('Você possui {0} fichas agora'.format(fichas))
+    elif 3<=soma1<=4 or 9<=soma1<=11:
+        fichas = fichas + aposta2
+        print('Você possui {0} fichas agora'.format(fichas))
+    elif soma1==2:
+        fichas = fichas + 2*aposta2
+        print('Você possui {0} fichas agora'.format(fichas))
+    else:
+        fichas = fichas + 3*aposta2
+        print('Você possui {0} fichas agora'.format(fichas))     
+ 
