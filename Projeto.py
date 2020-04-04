@@ -26,11 +26,11 @@ def pass_line_bet():
     if soma1==7 or soma1==11:
         fichas = fichas + aposta1
         print('Você ganhou.')
-        print('Agora você tem {0} fichas'.format(fichas))) ) 
+        print('Agora você tem {0} fichas'.format(fichas))  
     elif 2<=soma1<=3 or soma1==12:
         fichas = fichas - aposta1
         print('Você perdeu.')
-        print('Agora você tem {0} fichas'.format(fichas))) 
+        print('Agora você tem {0} fichas'.format(fichas)) 
     else:
         def loop_point():
             soma2=sorteio()
@@ -66,5 +66,22 @@ def field():
         print('Você possui {0} fichas agora'.format(fichas))
     else:
         fichas = fichas + 3*aposta2
-        print('Você possui {0} fichas agora'.format(fichas))     
- 
+        print('Você possui {0} fichas agora'.format(fichas))
+
+def any_craps():
+    global aposta3
+    global soma1
+    global fichas
+    print('A soma do resultado dos dados é',soma1)
+    if soma1 == 2:
+        fichas == fichas+(aposta3*7)
+        print('Você possui {0} fichas agora'.format(fichas))    
+    if soma1 == 3:
+        fichas == fichas+(aposta3*7)
+        print('Você possui {0} fichas agora'.format(fichas))   
+    if soma1 == 12:
+        fichas == fichas+(aposta3*7)
+        print('Você possui {0} fichas agora'.format(fichas))  
+    else:
+        fichas = fichas - aposta3
+        print('Você possui {0} fichas agora'.format(fichas))
