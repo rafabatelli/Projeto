@@ -85,3 +85,20 @@ def any_craps():
     else:
         fichas = fichas - aposta3
         print('Você possui {0} fichas agora'.format(fichas))
+
+def twelve():
+    global aposta4
+    global soma1
+    global fichas
+    print('A soma do resultado dos dados é',soma1)
+    if soma1==12:
+        fichas == fichas+(aposta4*30)
+        print('Você possui {0} fichas agora'.format(fichas))
+    else:
+        fichas == fichas - aposta4
+        print('Você possui {0} fichas agora'.format(fichas))
+        
+
+
+
+
